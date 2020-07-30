@@ -27,14 +27,13 @@ pipeline{
         //TODO:调试完成后将写死的数值恢复成自动获取@lingquan
         stage('clone') {
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [],
-                userRemoteConfigs: [[credentialsId: 'c5579d06-b37e-4410-948c-0588ff764679',
-                url: 'https://github.com/likaimin1985/jacoco_pipeline.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'c5579d06-b37e-4410-948c-0588ff764679', url: 'https://github.com/likaimin1985/jacoco_demo.git']]])
+                script{
+                     sh label: '', script: '''cd $JOB_NAME
+                     mvn clean compile'''
+                }
             }
-            script{
-            sh label: '', script: '''cd $JOB_NAME
-            mvn clean compile'''
-            }
+
 
         }
 
