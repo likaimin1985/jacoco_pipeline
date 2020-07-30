@@ -1,5 +1,4 @@
-了def call(){
-
+def call(){
     workspace= "${env.JENKINS_HOME}/pipeline_script_ec"
     //ws()人为规定工作空间，用于存放pipeline源码
     ws("$workspace"){
