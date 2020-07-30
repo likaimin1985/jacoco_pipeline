@@ -29,8 +29,10 @@ pipeline{
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'c5579d06-b37e-4410-948c-0588ff764679', url: 'https://github.com/likaimin1985/jacoco_demo.git']]])
                 script{
-                     sh label: '', script: 'cd $JENKINS_HOME/workspace/jacoco3@2'
-                     sh label: '', script: 'mvn clean compile'
+                     //sh label: '', script: 'cd $JENKINS_HOME/workspace/jacoco3@2'
+                     //sh label: '', script: 'mvn clean compile'
+                     sh label: '', script: '''cd $JENKINS_HOME/workspace/jacoco3@2
+                     mvn clean compile'''
                 }
             }
         }
@@ -51,7 +53,7 @@ pipeline{
         }
     }
     //TODO:清除工作空间
-    /**
+
     post{
         always{
             script {
@@ -70,6 +72,6 @@ pipeline{
             }
         }
     }
-    */
+
 
 }
