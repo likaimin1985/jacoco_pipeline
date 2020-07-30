@@ -7,7 +7,7 @@ pipeline{
     }
     tools{
         //在各个slave中已将各个maven 统一为这个名字，因此可以在各个node中通用
-        maven 'maven'
+        maven 'mvn3.6'
     }
     options{
         timestamps()
