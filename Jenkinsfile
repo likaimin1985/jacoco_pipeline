@@ -47,9 +47,11 @@ pipeline{
         }
 
         stage('jacoco'){
-            jacoco()
+            steps{
+                jacoco()
+            }
         }
-
+    }
     //TODO:清除工作空间
         post{
             always{
@@ -69,5 +71,5 @@ pipeline{
                 }
             }
         }
-    }
+
 }
