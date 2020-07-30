@@ -51,6 +51,7 @@ pipeline{
         }
     }
     //TODO:清除工作空间
+    /**
     post{
         always{
             script {
@@ -69,5 +70,6 @@ pipeline{
             }
         }
     }
+    */
 
 }
