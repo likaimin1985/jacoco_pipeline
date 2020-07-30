@@ -39,7 +39,7 @@ pipeline{
             steps {
                 script{
                     echo 'This is a DumpFromServer step'
-                    sh label: '', script: 'mvn org.jacoco:jacoco-maven-plugin:0.8.5:dump -Djacoco.address=192.1.1.101 -Djacoco.port=6300'
+                    sh label: '', script: 'mvn org.jacoco:jacoco-maven-plugin:0.8.5:dump -Djacoco.address=192.1.1.101 -Djacoco.port=2019'
                 }
             }
         }
