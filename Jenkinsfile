@@ -49,23 +49,23 @@ pipeline{
         }
 
     //TODO:清除工作空间
-    post{
-        always{
-            script {
-                 //清除工作空间
-                 cleanWs(
-                     cleanWhenAborted: true,
-                     cleanWhenFailure: true,
-                     cleanWhenNotBuilt: true,
-                     cleanWhenSuccess: true,
-                     cleanWhenUnstable: true,
-                     cleanupMatrixParent: true,
-                     disableDeferredWipeout: true,
-                     deleteDirs: true
-                 )
+        post{
+            always{
+                script {
+                     //清除工作空间
+                     cleanWs(
+                         cleanWhenAborted: true,
+                         cleanWhenFailure: true,
+                         cleanWhenNotBuilt: true,
+                         cleanWhenSuccess: true,
+                         cleanWhenUnstable: true,
+                         cleanupMatrixParent: true,
+                         disableDeferredWipeout: true,
+                         deleteDirs: true
+                     )
 
+                }
             }
         }
     }
-
 }
